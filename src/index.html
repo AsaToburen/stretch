@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- build:vendorCss css/vendorStyles.css -->
+    <link rel="stylesheet" href="/bower_components/ionicons/css/ionicons.css">
+    <!-- endbuild -->
+    <!-- build:css css/style.css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- endbuild -->
+    <title>Stretch Tucson</title>
+</head>
+
+<body ng-app="stretchTucson">
+    <navigation></navigation>
+    <div ng-view></div>
+    <!-- build:vendor js/vendor.js -->
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-route/angular-route.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js js/app.js -->
+    <script src="./app.config.js"></script>
+    <script src="./components/schedule/schedule.service.js"></script>
+    <script src="./components/navigation/navigation.directive.js"></script>
+    <script src="./components/home/home.controller.js"></script>
+    <script src="./components/schedule/schedule.controller.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

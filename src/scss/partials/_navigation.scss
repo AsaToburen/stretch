@@ -1,0 +1,26 @@
+nav {
+    background-color: $grey;
+    color: $blue;
+    padding-bottom: 1em;
+    h1 {
+        text-align: center;
+    }
+    img {
+        display: block;
+        margin: 0 auto;
+        width: 150px;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        li {
+            display: inline-block;
+            font-size: 2em;
+            margin: 0 5.3em;
+            a {
+                text-decoration: none;
+                color: $blue;
+            }
+        }
+    }
+}
