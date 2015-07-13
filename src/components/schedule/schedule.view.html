@@ -1,3 +1,21 @@
-<section class="schedule">
-  
+<section class="schedule" bg-select>
+    <div class="locations" ng-if="locations">
+        <ul ng-repeat="(key, studioID) in locations">
+            <li>
+                <a ng-href="#/schedule/{{studioName}}/{{studioID}}">{{key}}</a>
+            </li>
+        </ul>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th ng-repeat="val in week">{{val.day}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td ng-repeat="val in week">{{val.classTime[0]}}</td>
+            </tr>
+        </tbody>
+    </table>
 </section>

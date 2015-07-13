@@ -6,7 +6,11 @@ angular.module('stretchTucson')
 
             var scheduleObj = {
 
-                getSchedule: function(studioID) {
+                studioName: '',
+
+                getSchedule: function(studioID, studioName) {
+
+                    scheduleObj.studioName = studioName;
 
                     var deferred = $q.defer();
 
@@ -19,9 +23,25 @@ angular.module('stretchTucson')
                         });
                     return deferred.promise;
                 },
+                getStudioData: function(studioName) {
+                    
+                    scheduleObj.studioName = studioName;
+
+                    console.log(studioName);
+                    var studios = {
+                        'oasis': function() {
+                            var studioLocations = {
+                                central: '2zze09i2',
+                                downtown: '44lsg34a',
+                                east: 'bozs9rhy'
+                            };
+                            return studioLocations;
+                        }
+                    };
+                    console.log(studios['oasis']());
+                    return studios[studioName]();
+                },
             };
-
             return scheduleObj;
-
         }
     ]);

@@ -4,17 +4,16 @@ angular.module('stretchTucson')
     .controller('scheduleCtrl', ['$scope', '$routeParams', 'scheduleService',
         function($scope, $routeParams, scheduleService) {
 
-            console.log($routeParams.studioID);
+            console.log($routeParams);
 
-            scheduleService.getSchedule($routeParams.studioID)
-                .then(function(data) {
-                    $scope.sunday = data.results.undefined[6];
-                    $scope.monday = data.results.undefined[0];
-                    $scope.tuesday = data.results.undefined[1];
-                    
-                });
-
-
-
+            if ($routeParams.studioID) {
+                scheduleService.getSchedule($routeParams.studioID, $routeParams.studio)
+                    .then(function(data) {
+                        $scope.week = data.results.collection2;
+                    });
+            } else {
+                $scope.studioName = $routeParams.studio;
+                $scope.locations = scheduleService.getStudioData($routeParams.studio);
+            }
         }
     ]);

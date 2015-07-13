@@ -7,6 +7,10 @@ angular.module('stretchTucson', ['ngRoute'])
                 templateUrl: './components/home/home.view.html',
                 controller: 'homeCtrl'
             })
+            .when('/schedule/:studio/', {
+                templateUrl: './components/schedule/schedule.view.html',
+                controller: 'scheduleCtrl'
+            })
             .when('/schedule/:studio/:studioID', {
                 templateUrl: './components/schedule/schedule.view.html',
                 controller: 'scheduleCtrl'
